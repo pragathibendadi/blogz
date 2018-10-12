@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Build a Blog</title>
+        <style>
+            h1 {
+                text-align: center;
+            }
+            .error {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <a href="/blog">Main Blog Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/newpost">Add a Blog Entry</a>
+        </div>
+
+        {% block content %}
+        
+        {% endblock %}
+    </body>
+</html>

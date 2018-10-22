@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+<main class="container">
     <h1>Add a Blog Entry</h1>
     <form action="/newpost" id="new_post" method="post">
         <table>
@@ -27,6 +28,7 @@
                 </td>
             </tr>
         </table>
-        <br /><input type="submit" value="Add Entry" />
+        <br /><input type="submit" value="Add Entry" class="form-submit-button " />
     </form> 
+</main>
 {% endblock %}

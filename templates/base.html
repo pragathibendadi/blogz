@@ -1,21 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Build a Blog</title>
-        <style>
-            h1 {
-                text-align: center;
-            }
-            .error {
-                color: red;
-            }
-        </style>
+        <title>Blogz!</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
     </head>
     <body>
-        <div>
-            <a href="/blog">Main Blog Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/newpost">Add a Blog Entry</a>
+        <div class="navigation">
+                <a href="/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/blog">All Blogs</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/newpost">New Blog</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/login">Login</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/logout">Logout</a>
         </div>
 
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            <ul>
+            {% for category, message in messages %}
+                <li class='{{category}}'>{{message}}</li>
+            {% endfor %}   
+        </ul>
+        {% endwith %}
+        <br />
         {% block content %}
         
         {% endblock %}
